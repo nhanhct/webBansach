@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Models.EF.SanPham>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section id="main-content">
+    <section class="wrapper">
+        <!--overview start-->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"><i class="fa fa-laptop"></i>Quản lý sản phẩm</h3>
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home"></i><a href="index.html">Trang chủ</a></li>
+                    <li><i class="fa fa-laptop"></i>Quản lý sản phẩm</li>
+                </ol>
+            </div>
+        </div>
+
+        <p>
+            @Html.ActionLink("Thêm sản phẩm", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DanhMucSanPham.TenDMSP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NhaCungCap.TenNCC)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NhaXuatBan.TenNXB)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenSP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GiaSP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GiaNhap)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoLuong)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TacGia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HinhAnh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MoTa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgonNgu)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SLDaBan)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DanhMucSanPham.TenDMSP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NhaCungCap.TenNCC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NhaXuatBan.TenNXB)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenSP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GiaSP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GiaNhap)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoLuong)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TacGia)
+                    </td>
+                    <td>
+                        <img src=@item.HinhAnh title="product-name" height="150" , width="100" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MoTa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NgonNgu)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SLDaBan)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.MaSP }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.MaSP }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </section>
+    <div class="text-right">
+        <div class="credits">
+            <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
+            -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </div>
+</section>

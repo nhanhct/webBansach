@@ -1,0 +1,55 @@
+﻿@model List<BaiNopCuoiKi7.Areas.Users.Models.ThongTinGioHang>
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section jsFooter{
+    <script src="/js/controller/cartController.js"></script>
+}
+<div class="content">
+    <div class="section-group">
+        @if (Model.Count > 0)
+        {
+            
+        <div class="table-content table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="product-thumbnail">Hình ảnh</th>
+                        <th class="product-name">Tên sách</th>
+                        <th class="product-price">Giá</th>
+                        <th class="product-quantity">Số lượng</th>
+                        <th class="product-subtotal">Thành tiền</th>
+                        <th class="product-remove">Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="product" id="row_@item.SanPham.MaSP'">
+                            <td class="product-thumbnail"><a href="#"><img src="@item.SanPham.HinhAnh" height="100" width="100" /></a></td>
+                            <td class="product-name"><a href="#">@item.SanPham.TenSP</a></td>
+                            <td class="product-price"><span class="amount">@item.SanPham.GiaSP</span></td>
+                            <td><input class="txtQuantity" type="number" value="@item.Soluong" data-id="@item.SanPham.MaSP" /></td>
+                            <td class="product-subtotal">@((item.Soluong * item.SanPham.GiaSP))$</td>
+                            <td class="product-remove"><a data-id="@item.SanPham.MaSP" class="btn-delete">Xóa</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            <button id="btnContinue" class="btn">Tiếp tục mua hàng</button>
+            <button id="btnUpdate" class="btn">Cập nhật giỏ hàng</button>
+            <button id="btnDeleteAll" class="btn">Xóa giỏ hàng</button>
+            <button class=" btn"><a href="/Users/GioHang/Payment">Mua Hàng</a></button>
+            
+        </div>
+                }
+                else
+                {
+                <span class="alert alert-danger">Chưa có sản phẩm nào</span>
+                }
+        </div>
+</div>
+
+

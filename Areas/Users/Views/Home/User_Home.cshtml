@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Models.EF.SanPham>
+@if (Session["Session_USER"] != null)
+{
+    Layout = "~/Areas/Users/Views/Shared/_Layout_DMSP_User.cshtml";
+}
+else if (Session["Session_USER"] == null)
+{
+    Layout = "~/Areas/Users/Views/Shared/_Layout_DMSP.cshtml";
+}
+@foreach (var item in Model)
+{
+    <div class="special-products-grids">
+        <div class="col-md-3 special-products-grid text-center">
+            @*<a class="product-here" href="single-page.html"><img src="/images/p1.jpg" title="product-name" /></a>*@
+            <a class="product-here" href="single-page.html"><img src=@item.HinhAnh title="product-name" height="190" , width="150" /></a>
+            <h4><a href="#"> @Html.DisplayFor(modelItem => item.TenSP)</a></h4>
+            <a class="product-btn" href="/Users/GioHang/ThemSPvaoGH?MaSP=@item.MaSP&SoLuong=1"><span>@Html.DisplayFor(modelItem => item.GiaSP)</span><small>GET NOW</small><label> </label></a>
+            <br/>
+            @Html.ActionLink("Xem chi tiết sản phẩm","CT_SanPham", new { id = item.MaSP })
+        </div>
+    </div>
+}
+
+
+

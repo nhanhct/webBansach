@@ -1,0 +1,67 @@
+﻿@model Models.EF.NhaCungCap
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section id="main-content">
+    <section class="wrapper">
+        <!--overview start-->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"><i class="fa fa-laptop"></i>Quản lý nhà cung cấp</h3>
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home"></i><a href="index.html">Trang chủ</a></li>
+                    <li><i class="fa fa-laptop"></i>Quản lý nhà cung cấp</li>
+                    <li><i class="fa fa-laptop"></i>Thông tin chi tiết nhà cung cấp</li>
+                </ol>
+            </div>
+        </div>
+
+        <div>
+            <h4>Thông tin nhà cung cấp</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.TenNCC)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TenNCC)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DiaChi)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DiaChi)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SDT)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SDT)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.MaNCC }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </section>
+    <div class="text-right">
+        <div class="credits">
+            <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
+            -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </div>
+</section>

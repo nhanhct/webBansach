@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Models.EF.TimKiem_Result>
+@{
+
+    ViewBag.Title = "SachGiaoKhoa";
+}
+@foreach (var item in Model)
+{
+    <div class="special-products-grids">
+        <div class="col-md-3 special-products-grid text-center">
+            <a class="brand-name" href="single-page.html"><img src="/images/b1.jpg" title="name" /></a>
+            @*<a class="product-here" href="single-page.html"><img src="/images/p1.jpg" title="product-name" /></a>*@
+            <a class="product-here" href="single-page.html"><img src=@item.HinhAnh title="product-name" height="190" , width="150" /></a>
+            <h4><a href="dsf"> @Html.DisplayFor(modelItem => item.TenSP)</a></h4>
+            <a class="product-btn" href="/Users/GioHang/ThemSPvaoGH?MaSP=@item.MaSP&SoLuong=1"><span>@Html.DisplayFor(modelItem => item.GiaSP)</span><small>GET NOW</small><label> </label></a>
+            @Html.ActionLink("Xem chi tiết sản phẩm", "Details", new { id = item.MaSP })
+        </div>
+    </div>
+}

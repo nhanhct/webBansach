@@ -1,0 +1,139 @@
+﻿@model Models.EF.SanPham
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section id="main-content">
+    <section class="wrapper">
+        <!--overview start-->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"><i class="fa fa-laptop"></i>Quản lý sản phẩm</h3>
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home"></i><a href="index.html">Trang chủ</a></li>
+                    <li><i class="fa fa-laptop"></i>Quản lý sản phẩm</li>
+                    <li><i class="fa fa-laptop"></i>Chi tiết sản phẩm</li>
+                </ol>
+            </div>
+        </div>
+
+        <div>
+            <h4>Thông tin sản phẩm</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.DanhMucSanPham.TenDMSP)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DanhMucSanPham.TenDMSP)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NhaCungCap.TenNCC)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NhaCungCap.TenNCC)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NhaXuatBan.TenNXB)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NhaXuatBan.TenNXB)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TenSP)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TenSP)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.GiaSP)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.GiaSP)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.GiaNhap)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.GiaNhap)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SoLuong)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SoLuong)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TacGia)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TacGia)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HinhAnh)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HinhAnh)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.MoTa)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MoTa)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NgonNgu)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NgonNgu)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SLDaBan)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SLDaBan)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.MaSP }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </section>
+    <div class="text-right">
+        <div class="credits">
+            <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
+            -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </div>
+</section>
